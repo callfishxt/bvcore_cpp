@@ -15,7 +15,6 @@ find_package(GLEW REQUIRED)
 find_package(OpenAL REQUIRED)
 find_package(CURL REQUIRED) 
 find_package(ZLIB REQUIRED)
-find_package(jsoncpp REQUIRED)
 find_package(LibArchive REQUIRED)
 
 if (NOT APPLE)

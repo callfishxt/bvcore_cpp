@@ -11,8 +11,6 @@ option(VOXELENGINE_BUILD_TESTS OFF)
 
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(CURL REQUIRED)
-find_package(jsoncpp REQUIRED)
 
 add_subdirectory(src)
 add_executable(${PROJECT_NAME} src/voxel_engine.cpp)
@@ -72,8 +70,8 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -no-pie -lstdc++fs")
 endif()
 
-find_package(LibArchive REQUIRED)
-target_link_libraries(${PROJECT_NAME} VoxelEngineSrc ${CMAKE_DL_LIBS} ${CURL_LIBRARIES} jsoncpp LibArchive::LibArchive)
+
+target_link_libraries(${PROJECT_NAME} VoxelEngineSrc ${CMAKE_DL_LIBS})
 
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/res DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
